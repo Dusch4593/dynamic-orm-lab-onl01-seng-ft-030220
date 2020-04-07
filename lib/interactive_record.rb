@@ -52,8 +52,9 @@ class InteractiveRecord
   end
 
   def self.find_by(attribute)
+    binding.pry
     if(attribute.class == Integer)
-      binding.pry
+      
       DB[:conn].execute("SELECT * FROM #{self.table_name}")
     else
       self.find_by_name(attribute)
