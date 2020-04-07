@@ -59,7 +59,6 @@ class InteractiveRecord
     else
       self.find_by_name(value).to_a
     end
-    binding.pry
   end
   
   
