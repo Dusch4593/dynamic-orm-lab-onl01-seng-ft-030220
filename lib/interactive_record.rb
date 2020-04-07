@@ -57,7 +57,7 @@ class InteractiveRecord
     if(value.class == Integer)
       DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE #{property} = ?", value).to_a
     else
-      self.find_by_name(value.to_s).to_a
+      self.find_by_name(value).to_a
     end
     binding.pry
   end
