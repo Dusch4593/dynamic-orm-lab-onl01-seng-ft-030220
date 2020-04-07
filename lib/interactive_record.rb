@@ -59,6 +59,6 @@ class InteractiveRecord
     # else 
     #   self.find_by_name(attribute)
     binding.pry
+    self.find_by_name(attribute)
   end
-  
 end
