@@ -59,7 +59,8 @@ class InteractiveRecord
     else
       self.find_by_name(property.to_s).to_a
     end
+    binding.pry
   end
   
-  binding.pry
+  
 end
