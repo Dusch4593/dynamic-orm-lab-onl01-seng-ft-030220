@@ -53,7 +53,8 @@ class InteractiveRecord
 
   def self.find_by(attribute)
     binding.pry
-    if(attribute.class == Integer)
+    value = 
+    if(attribute.first[1].class == Integer)
       
       DB[:conn].execute("SELECT * FROM #{self.table_name}")
     else
