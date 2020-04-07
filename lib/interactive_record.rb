@@ -60,4 +60,6 @@ class InteractiveRecord
       self.find_by_name(property.to_s).to_a
     end
   end
+  
+  binding.pry
 end
