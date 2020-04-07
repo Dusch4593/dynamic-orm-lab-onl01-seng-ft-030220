@@ -52,14 +52,12 @@ class InteractiveRecord
     DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE name = ?", name)
   end
 
-  def find_by(attribute)
-    #executes the SQL to find a row by the attribute passed in this method 
-    DB[:conn].results_as_hash = true
-    # if the attribute[value] is an integer: 
-    #  
-    # else 
-    #   self.find_by_name(attribute)
-   
-    self.find_by_name(attribute)
+  def self.find_by(attribute)
+    if(attribute.class == Integer)
+      binding.pry
+      DB[:conn].execute("SELECT * FROM #{self.table_name}")
+    else
+      self.find_by_name(attribute)
+    end
   end
 end
