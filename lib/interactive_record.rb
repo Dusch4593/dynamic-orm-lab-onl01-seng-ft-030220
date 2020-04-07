@@ -52,11 +52,10 @@ class InteractiveRecord
   end
 
   def self.find_by(attribute)
-    binding.pry
-    value = 
-    if(attribute.first[1].class == Integer)
-      
-      DB[:conn].execute("SELECT * FROM #{self.table_name}")
+    property = attribute.first[0]
+    value = attribute.first[1]
+    if(value.class == Integer)
+      DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE #{property} = ?", value)
     else
       self.find_by_name(attribute)
     end
